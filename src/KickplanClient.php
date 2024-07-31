@@ -1,10 +1,11 @@
 <?php
+namespace Kickplan\Kickplan;
 
-require_once 'resources/Features.php';
-require_once 'resources/Accounts.php';
-require_once 'resources/Metrics.php';
+use Kickplan\Kickplan\Resources\Features;
+use Kickplan\Kickplan\Resources\Accounts;
+use Kickplan\Kickplan\Resources\Metrics;
 
-class KickplanApi {
+class KickplanClient {
     public $features;
     public $accounts;
     public $metrics;
