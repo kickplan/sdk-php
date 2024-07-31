@@ -4,8 +4,8 @@ require_once 'src/KickplanApi.php';
 
 function testSetMetricsKey() {
     $client = new KickplanApi([
-        'apiKey' => '<YOUR_API_KEY>',
-        'baseUrl' => 'https://demo-control.proxy.kickplan.io'
+        'apiKey' => getenv('KICKPLAN_API_KEY'),
+        'baseUrl' => getenv('KICKPLAN_BASE_URL')
     ]);
 
     try {
