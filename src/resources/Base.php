@@ -17,8 +17,8 @@ abstract class Base {
             throw new Exception("Please supply a base url to initialize this client.");
         }
 
-        $apiKey = $config['apiKey'] || getenv('KICKPLAN_API_KEY');
-        $baseUrl = $config['baseUrl'] || getenv('KICKPLAN_BASE_URL');
+        $apiKey = $config['apiKey'] ?? getenv('KICKPLAN_API_KEY');
+        $baseUrl = $config['baseUrl'] ?? getenv('KICKPLAN_BASE_URL');
 
         $this->client = new Client([
             'base_uri' => $baseUrl,
