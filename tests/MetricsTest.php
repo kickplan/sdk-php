@@ -18,11 +18,11 @@ class MetricsTest extends TestCase
 
     public function testPost()
     {
-        $response = $this->client->metrics->setMetricsKey(
-            'video-watched',
-            '60',
-            '123'
-        );
+        $response = $this->client->metrics->setMetricsKey([
+            'key' => 'video-watched',
+            'account_key' => '60',
+            'value' => '123'
+        ]);
 
         $this->assertIsArray($response);
     }

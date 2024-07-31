@@ -59,11 +59,14 @@ $result = $client->features->resolveFeatureForAccount($featureName, $accountId)
 ### post
 In order to resolve features for an account, Kickplan needs to know an account key and the plan key they are on. Plan keys are not currently exposed in the API but will be soon.
 
-`post(string $key, array $plans = []): object`
+`post(array: $payload): object`
+
+`$payload`: Associative array with the following keys:
+ - `key` (string): The unique identifier.
 
 Example:
 ```php
-$result = $client->accounts->post($key, $plans);
+$result = $client->accounts->post($payload);
 ```
 
 # [Metrics](https://github.com/kickplan/sdk-php/blob/main/src/resources/Metrics.php)
@@ -71,13 +74,19 @@ $result = $client->accounts->post($key, $plans);
 ### setMetricsKey
 A request to set a value for a key metric, for a given account.
 
-`$result = $client->metrics->setMetricsKey(string $key, string $value, string $account_key, ?DateTime $time, ?string $idempotency_key);`
+`$result = $client->metrics->setMetricsKey(array $payload);`
+
+`$payload`: Associative array with the following keys:
+ - `key` (string): The unique identifier.
+ - `account_key` (string): The account identifier.
+ - `value` (string | number | boolean | array): The value
+ - `time` (optional, DateTime|string): Timestamp
+ - `idempotency_key` (optional, string): Idempotency key
 
 Example:
 ```php
-$result = $client->metrics->setMetricsKey($key, $value, $account_key);
+$result = $client->metrics->setMetricsKey($payload);
 ```
 
 Returns a response with metrics response json object.
 
-Returns a response with [metrics response json](https://github.com/kickplan/sdk-typescript/blob/v1/src/resources/metrics/types.ts) object.

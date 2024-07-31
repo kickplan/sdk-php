@@ -18,7 +18,10 @@ class AccountsTest extends TestCase
 
     public function testPost()
     {
-        $response = $this->client->accounts->post('features',['123']);
+        $response = $this->client->accounts->post([
+            'key' => 'features',
+            'plans' => ['123']
+        ]);
 
         $this->assertIsArray($response);
     }
