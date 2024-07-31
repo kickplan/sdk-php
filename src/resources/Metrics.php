@@ -1,5 +1,5 @@
 <?php
-namespace Kickplan\Kickplan\Resources;
+namespace Kickplan\KickplanSDK\Resources;
 
 class Metrics extends Base {
     public function __construct($config) {

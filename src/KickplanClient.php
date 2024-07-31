@@ -1,9 +1,9 @@
 <?php
-namespace Kickplan\Kickplan;
+namespace Kickplan\KickplanSDK;
 
-use Kickplan\Kickplan\Resources\Features;
-use Kickplan\Kickplan\Resources\Accounts;
-use Kickplan\Kickplan\Resources\Metrics;
+use Kickplan\KickplanSDK\Resources\Features;
+use Kickplan\KickplanSDK\Resources\Accounts;
+use Kickplan\KickplanSDK\Resources\Metrics;
 
 class KickplanClient {
     public $features;
