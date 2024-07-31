@@ -9,19 +9,22 @@ abstract class Base {
     private $client;
 
     public function __construct($config) {
-        if (empty($config['apiKey'])) {
-            throw new Exception("Please supply a apiKey to initialize this client.");
+        if (empty($config['apiKey']) && empty(getenv('KICKPLAN_API_KEY'))) {
+            throw new Exception("Please supply a api key to initialize this client.");
         }
 
-        if (empty($config['baseUrl'])) {
-            throw new Exception("Please supply a baseUrl to initialize this client.");
+        if (empty($config['baseUrl']) && empty(getenv('KICKPLAN_BASE_URL'))) {
+            throw new Exception("Please supply a base url to initialize this client.");
         }
+
+        $apiKey = $config['apiKey'] || getenv('KICKPLAN_API_KEY');
+        $baseUrl = $config['baseUrl'] || getenv('KICKPLAN_BASE_URL');
 
         $this->client = new Client([
-            'base_uri' => $config['baseUrl'],
+            'base_uri' => $baseUrl,
             'headers' => [
                 'Content-Type' => 'application/json',
-                'Authorization' => 'Bearer ' . $config['apiKey']
+                'Authorization' => 'Bearer ' . $apiKey
             ]
         ]);
     }
