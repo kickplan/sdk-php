@@ -1,6 +1,5 @@
 <?php
-
-require_once 'vendor/autoload.php';
+namespace Kickplan\Kickplan\Resources;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
@@ -10,11 +9,11 @@ abstract class Base {
 
     public function __construct($config) {
         if (empty($config['apiKey']) && empty(getenv('KICKPLAN_API_KEY'))) {
-            throw new Exception("Please supply a api key to initialize this client.");
+            throw new \Exception("Please supply a api key to initialize this client.");
         }
 
         if (empty($config['baseUrl']) && empty(getenv('KICKPLAN_BASE_URL'))) {
-            throw new Exception("Please supply a base url to initialize this client.");
+            throw new \Exception("Please supply a base url to initialize this client.");
         }
 
         $apiKey = $config['apiKey'] ?? getenv('KICKPLAN_API_KEY');
@@ -35,7 +34,7 @@ abstract class Base {
             $body = $response->getBody()->getContents();
 
             if ($response->getStatusCode() >= 400) {
-                throw new Exception($response->getReasonPhrase());
+                throw new \Exception($response->getReasonPhrase());
             }
 
             // Some endpoints return empty body
@@ -47,7 +46,7 @@ abstract class Base {
             return json_decode($body, true);
 
         } catch (RequestException $e) {
-            throw new Exception($e->getMessage());
+            throw new \Exception($e->getMessage());
         }
     }
 }

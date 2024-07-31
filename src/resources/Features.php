@@ -1,6 +1,5 @@
 <?php
-
-require_once 'Base.php';
+namespace Kickplan\Kickplan\Resources;
 
 class Features extends Base {
     public function __construct($config) {

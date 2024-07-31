@@ -1,13 +1,12 @@
 <?php
-
-require_once 'Base.php';
+namespace Kickplan\Kickplan\Resources;
 
 class Metrics extends Base {
     public function __construct($config) {
         parent::__construct($config);
     }
 
-    public function setMetricsKey(string $key, string $account_key, $value, ?DateTime $time = null, ?string $idempotency_key = null) {
+    public function setMetricsKey(string $key, string $account_key, $value, ?\DateTime $time = null, ?string $idempotency_key = null) {
         $options = [
             'json' => [
                 'key' => $key,
