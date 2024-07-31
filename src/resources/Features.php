@@ -7,7 +7,7 @@ class Features extends Base {
     }
 
     public function resolve() {
-        return $this->request('GET', 'api/features/resolve');
+        return $this->request('POST', 'api/features/resolve');
     }
 
     public function resolveWithAccount(string $accountId) {
