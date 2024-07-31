@@ -1,5 +1,21 @@
 {
+    "name": "kickplan/kickplan-sdk",
+    "description": "PHP implementation of Kickplan's API as an SDK.",
     "require": {
+        "php": ">=7.4",
         "guzzlehttp/guzzle": "^7.9"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kickplan\\Kickplan\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Kickplan\\Kickplan\\Tests\\": "tests/"
+        }
     }
 }
