@@ -4,7 +4,7 @@ require_once 'src/KickplanApi.php';
 
 function testResolve() {
     $client = new KickplanApi([
-        'apiKey' => getenv('KICKPLAN_API_KEY'),
+        'apiKey' => '<YOUR_API_KEY>',
         'baseUrl' => 'https://demo-control.proxy.kickplan.io'
     ]);
 
@@ -18,7 +18,7 @@ function testResolve() {
 
 function testResolveWithAccount() {
     $client = new KickplanApi([
-        'apiKey' => getenv('KICKPLAN_API_KEY'),
+        'apiKey' => '<YOUR_API_KEY>',
         'baseUrl' => 'https://demo-control.proxy.kickplan.io'
     ]);
 
@@ -32,7 +32,7 @@ function testResolveWithAccount() {
 
 function testIsFeatureAvailableForAccount () {
     $client = new KickplanApi([
-        'apiKey' => getenv('KICKPLAN_API_KEY'),
+        'apiKey' => '<YOUR_API_KEY>',
         'baseUrl' => 'https://demo-control.proxy.kickplan.io'
     ]);
 
