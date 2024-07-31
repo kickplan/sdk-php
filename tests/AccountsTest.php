@@ -20,7 +20,9 @@ class AccountsTest extends TestCase
     {
         $response = $this->client->accounts->post([
             'key' => 'features',
-            'plans' => ['123']
+            "account_plans" => [
+                ["plan_key" => "lite"]
+            ]
         ]);
 
         $this->assertIsArray($response);
