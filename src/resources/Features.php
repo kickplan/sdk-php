@@ -22,7 +22,7 @@ class Features extends Base {
         return $this->request('POST', 'api/features/resolve', $options);
     }
 
-    public function isFeatureAvailableForAccount(string $featureName, string $accountId) {
+    public function resolveFeatureForAccount(string $featureName, string $accountId) {
         $options = [
             'json' => [
                 'context' => [
