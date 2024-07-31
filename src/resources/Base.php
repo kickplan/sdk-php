@@ -10,17 +10,18 @@ abstract class Base {
 
     public function __construct($config) {
         if (empty($config['apiKey'])) {
-            throw new Exception("Please supply a KICKPLAN_API_KEY to initialize this client.");
+            throw new Exception("Please supply a apiKey to initialize this client.");
         }
 
-        $apiKey = $config['apiKey'];
-        $baseUrl = $config['baseUrl'] ?? 'https://demo-control.proxy.kickplan.io';
+        if (empty($config['baseUrl'])) {
+            throw new Exception("Please supply a baseUrl to initialize this client.");
+        }
 
         $this->client = new Client([
-            'base_uri' => $baseUrl,
+            'base_uri' => $config['baseUrl'],
             'headers' => [
                 'Content-Type' => 'application/json',
-                'Authorization' => 'Bearer ' . $apiKey
+                'Authorization' => 'Bearer ' . $config['apiKey']
             ]
         ]);
     }
