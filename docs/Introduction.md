@@ -13,7 +13,7 @@ composer require kickplan/sdk-php
 After importing, please initialize your client:
 
 ```php
-$client = new KickplanApi([
+$client = new KickplanClient([
   'apiKey' => '<YOUR_KICKPLAN_API_KEY>',
   'baseUrl' => '<YOUR_KICKPLAN_BASE_URL>'
 ]);
