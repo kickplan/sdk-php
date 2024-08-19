@@ -7,7 +7,7 @@ Kickplan takes care of the complex business logic for monetization, using our SD
 To import the package using Composer
 
 ```bash
-composer require kickplan/sdk-php
+composer require kickplan/kickplan-sdk:dev-main
 ```
 
 After importing, please initialize your client:
