@@ -1,24 +1,25 @@
 {
-    "name": "kickplan/kickplan-sdk",
-    "description": "PHP implementation of Kickplan's API as an SDK.",
-    "type": "library",
-    "minimum-stability": "stable",
-    "license": "MIT",
-    "require": {
-        "php": ">=7.4",
-        "guzzlehttp/guzzle": "^7.9"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^9.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "Kickplan\\KickplanSDK\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Kickplan\\KickplanSDK\\Tests\\": "tests/"
-        }
+  "name": "kickplan/kickplan-sdk",
+  "description": "PHP implementation of Kickplan's API as an SDK.",
+  "type": "library",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "require": {
+    "php": ">=7.4",
+    "guzzlehttp/guzzle": "^7.9",
+    "ramsey/uuid": "^4.7"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Kickplan\\": "src/"
     }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Kickplan\\Tests\\": "tests/"
+    }
+  }
 }

@@ -1,16 +1,18 @@
 <?php
-namespace Kickplan\KickplanSDK;
+namespace Kickplan;
 
-use Kickplan\KickplanSDK\Resources\Features;
-use Kickplan\KickplanSDK\Resources\Accounts;
-use Kickplan\KickplanSDK\Resources\Metrics;
+use Kickplan\Resources\Features;
+use Kickplan\Resources\Accounts;
+use Kickplan\Resources\Metrics;
 
-class KickplanClient {
+class KickplanClient
+{
     public $features;
     public $accounts;
     public $metrics;
 
-    public function __construct($config) {
+    public function __construct($config)
+    {
         $this->features = new Features($config);
         $this->accounts = new Accounts($config);
         $this->metrics = new Metrics($config);

@@ -1,8 +1,8 @@
 <?php
-namespace Kickplan\KickplanSDK\Tests;
+namespace Kickplan\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Kickplan\KickplanSDK\KickplanClient;
+use Kickplan\KickplanClient;
 
 class FeaturesTest extends TestCase
 {
@@ -11,8 +11,8 @@ class FeaturesTest extends TestCase
     protected function setUp(): void
     {
         $this->client = new KickplanClient([
-            'apiKey' => getenv('KICKPLAN_API_KEY'),
-            'baseUrl' => getenv('KICKPLAN_BASE_URL')
+            "apiKey" => getenv("KICKPLAN_API_KEY"),
+            "baseUrl" => getenv("KICKPLAN_BASE_URL"),
         ]);
     }
 
@@ -23,16 +23,20 @@ class FeaturesTest extends TestCase
         $this->assertIsArray($response);
     }
 
-    public function testResolveWithAccount() {
-        $response = $this->client->features->resolveWithAccount('123');
+    public function testResolveWithAccount()
+    {
+        $response = $this->client->features->resolveWithAccount("123");
 
         $this->assertIsArray($response);
     }
 
-    public function testResolveFeatureForAccount() {
-        $response = $this->client->features->resolveFeatureForAccount('test', '123');
+    public function testResolveFeatureForAccount()
+    {
+        $response = $this->client->features->resolveFeatureForAccount(
+            "test",
+            "123"
+        );
 
         $this->assertIsArray($response);
     }
 }
-
