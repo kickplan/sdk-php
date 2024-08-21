@@ -22,15 +22,6 @@ jobs:
       - name: Validate composer.json and composer.lock
         run: composer validate --strict
 
-      - name: Set up environment variables
-        env:
-          KICKPLAN_API_KEY: ${{ secrets.KICKPLAN_API_KEY }}
-          KICKPLAN_BASE_URL: ${{ secrets.KICKPLAN_BASE_URL }}
-        run: |
-          echo "KICKPLAN_API_KEY=$KICKPLAN_API_KEY"
-          echo "KICKPLAN_BASE_URL=$KICKPLAN_BASE_URL"
-          php -r 'echo getenv("KICKPLAN_API_KEY");'
-
       - name: Cache Composer packages
         id: composer-cache
         uses: actions/cache@v3
@@ -47,4 +38,7 @@ jobs:
       # Docs: https://getcomposer.org/doc/articles/scripts.md
 
       - name: Run test suite
-        run: php vendor/bin/phpunit
+        run: |
+          export KICKPLAN_API_KEY=${{ secrets.KICKPLAN_API_KEY }}
+          export KICKPLAN_BASE_URL=${{ secrets.KICKPLAN_BASE_URL }}
+          php vendor/bin/phpunit
