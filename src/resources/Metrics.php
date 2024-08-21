@@ -1,7 +1,7 @@
 <?php
-namespace Kickplan\KickplanSdk\Resources;
+namespace Kickplan\Resources;
 
-use Kickplan\KickplanSdk\Types\MetricsRequest;
+use Kickplan\Types\MetricsRequest;
 
 class Metrics extends Base
 {

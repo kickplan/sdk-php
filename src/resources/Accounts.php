@@ -1,7 +1,7 @@
 <?php
-namespace Kickplan\KickplanSdk\Resources;
+namespace Kickplan\Resources;
 
-use Kickplan\KickplanSdk\Types\AccountRequest;
+use Kickplan\Types\AccountRequest;
 class Accounts extends Base
 {
     public function __construct($config)

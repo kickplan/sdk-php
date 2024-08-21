@@ -1,5 +1,5 @@
 <?php
-namespace Kickplan\KickplanSdk\Resources;
+namespace Kickplan\Resources;
 
 class Features extends Base
 {

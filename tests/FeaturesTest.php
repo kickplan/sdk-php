@@ -1,8 +1,8 @@
 <?php
-namespace Kickplan\KickplanSdk\Tests;
+namespace Kickplan\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Kickplan\KickplanSdk\KickplanClient;
+use Kickplan\KickplanClient;
 
 class FeaturesTest extends TestCase
 {

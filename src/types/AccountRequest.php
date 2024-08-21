@@ -1,6 +1,6 @@
 <?php
 
-namespace Kickplan\KickplanSdk\Types;
+namespace Kickplan\Types;
 
 class AccountRequest
 {

@@ -1,5 +1,5 @@
 <?php
-namespace Kickplan\KickplanSdk\Resources;
+namespace Kickplan\Resources;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;

@@ -14,12 +14,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Kickplan\\KickplanSdk\\": "src/"
+      "Kickplan\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Kickplan\\KickplanSdk\\Tests\\": "tests/"
+      "Kickplan\\Tests\\": "tests/"
     }
   }
 }
