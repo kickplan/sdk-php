@@ -26,6 +26,9 @@ jobs:
         env:
           KICKPLAN_API_KEY: ${{ secrets.KICKPLAN_API_KEY }}
           KICKPLAN_BASE_URL: ${{ secrets.KICKPLAN_BASE_URL }}
+        run: |
+          echo "KICKPLAN_API_KEY=$KICKPLAN_API_KEY"
+          echo "KICKPLAN_BASE_URL=$KICKPLAN_BASE_URL"
 
       - name: Cache Composer packages
         id: composer-cache
