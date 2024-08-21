@@ -29,6 +29,7 @@ jobs:
         run: |
           echo "KICKPLAN_API_KEY=$KICKPLAN_API_KEY"
           echo "KICKPLAN_BASE_URL=$KICKPLAN_BASE_URL"
+          php -r 'echo getenv("KICKPLAN_API_KEY");'
 
       - name: Cache Composer packages
         id: composer-cache
