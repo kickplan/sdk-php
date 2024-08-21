@@ -1,19 +1,22 @@
 <?php
-namespace Kickplan\KickplanSDK\Resources;
+namespace Kickplan\KickplanSdk\Resources;
 
-use Kickplan\KickplanSDK\Types\MetricsRequest;
+use Kickplan\KickplanSdk\Types\MetricsRequest;
 
-class Metrics extends Base {
-    public function __construct($config) {
+class Metrics extends Base
+{
+    public function __construct($config)
+    {
         parent::__construct($config);
     }
 
-    public function setMetricsKey(array $payload) {
+    public function setMetricsKey(array $payload)
+    {
         $metricsRequest = new MetricsRequest($payload);
 
         $options = [
-            'json' => $metricsRequest->toArray()
+            "json" => $metricsRequest->toArray(),
         ];
-        return $this->request('POST', 'api/metrics/set', $options);
+        return $this->request("POST", "api/metrics/set", $options);
     }
 }

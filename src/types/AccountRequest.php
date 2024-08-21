@@ -1,6 +1,6 @@
 <?php
 
-namespace Kickplan\KickplanSDK\Types;
+namespace Kickplan\KickplanSdk\Types;
 
 class AccountRequest
 {
@@ -16,12 +16,14 @@ class AccountRequest
      */
     public function __construct(array $data)
     {
-        if (empty($data['key']) || !is_string($data['key'])) {
-            throw new \InvalidArgumentException('The key must be provided and must be a string.');
+        if (empty($data["key"]) || !is_string($data["key"])) {
+            throw new \InvalidArgumentException(
+                "The key must be provided and must be a string."
+            );
         }
 
-        $this->key = $data['key'];
-        unset($data['key']);  // Remove 'key' from the array to store the rest as additional data
+        $this->key = $data["key"];
+        unset($data["key"]); // Remove 'key' from the array to store the rest as additional data
         $this->data = $data;
     }
 
@@ -32,6 +34,6 @@ class AccountRequest
      */
     public function toArray(): array
     {
-        return array_merge(['key' => $this->key], $this->data);
+        return array_merge(["key" => $this->key], $this->data);
     }
 }
