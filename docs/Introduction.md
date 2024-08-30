@@ -56,17 +56,50 @@ $result = $client->features->resolveFeatureForAccount($featureName, $accountId)
 
 # [Accounts](https://github.com/kickplan/sdk-typescript/blob/main/src/resources/Accounts.php):
 
-### post
+### create
 In order to resolve features for an account, Kickplan needs to know an account key and the plan key they are on. Plan keys are not currently exposed in the API but will be soon.
 
-`post(array: $payload): object`
+`create(array: $payload): object`
 
 `$payload`: Associative array with the following keys:
  - `key` (string): The unique identifier.
+Any other data in the array will be passed on and matched to custom fields on the Account.
 
 Example:
 ```php
-$result = $client->accounts->post($payload);
+$payload = [
+    "key" => "acme",
+    "name" => "Acme",
+    "account_plans" => [
+        [
+            "plan_key" => "essentials"
+        ]
+    ]
+];
+$result = $client->accounts->create($payload);
+```
+
+### update
+To keep accounts up to date, you can update anytime an account changes or it's plan changes.
+
+`update(array: $payload): object`
+
+`$payload`: Associative array with the following keys:
+ - `key` (string): The unique identifier.
+Any other data in the array will be passed on and matched to custom fields on the Account.
+
+Example:
+```php
+$payload = [
+    "key" => "acme",
+    "name" => "Acme",
+    "account_plans" => [
+        [
+            "plan_key" => "essentials"
+        ]
+    ]
+];
+$result = $client->accounts->update($payload);
 ```
 
 # [Metrics](https://github.com/kickplan/sdk-php/blob/main/src/resources/Metrics.php)
